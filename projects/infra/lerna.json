@@ -1,6 +1,7 @@
 {
   "packages": [
-    "packages/*"
+    "packages/*",
+    "github/actions/*"
   ],
   "version": "0.0.0"
 }

@@ -1,0 +1,35 @@
+{
+  "name": "todo2issue",
+  "version": "0.0.0",
+  "description": "A GitHub action to convert TODOs to issues.",
+  "keywords": [
+    "actions"
+  ],
+  "author": "Tianhao Zhou <tianhaoz@umich.edu>",
+  "homepage": "https://github.com/tianhaoz95/one",
+  "license": "MIT",
+  "main": "lib/todo2issue.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tianhaoz95/one.git"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/tianhaoz95/one/issues"
+  },
+  "devDependencies": {
+    "typescript": "^4.0.5"
+  },
+  "dependencies": {
+    "@actions/core": "^1.2.6"
+  }
+}
