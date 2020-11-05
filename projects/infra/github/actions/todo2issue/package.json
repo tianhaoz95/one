@@ -36,6 +36,7 @@
     "typescript": "^4.0.5"
   },
   "dependencies": {
-    "@actions/core": "^1.2.6"
+    "@actions/core": "^1.2.6",
+    "tslog": "^2.10.0"
   }
 }

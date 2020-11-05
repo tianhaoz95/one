@@ -1,9 +1,16 @@
+export enum TodoParsingErrorType {
+    MULTIPLE_TODO_ENTRIES,
+};
+
 export interface LineEntity {
     containsTodo: boolean;
     content: string;
+    todoContent?: string;
     title?: string;
     githubUsername?: string;
     issueNumber?: string;
+    error?: TodoParsingErrorType;
+    errorMessage?: string;
 }
 
 export interface TodoIssue {

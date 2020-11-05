@@ -16,4 +16,11 @@ describe("Line parser tests", () => {
         const entity = lineToLineEntity("// I am just a comment.");
         expect(entity.containsTodo).toBeFalsy();
     });
+
+    test("Should parse todo section", () => {
+        const entity = lineToLineEntity("// TODO(tianhaoz95): some random todo");
+        expect(entity.containsTodo).toBeTruthy();
+        expect(entity.todoContent).toBeDefined();
+        expect(entity.todoContent).toMatch("TODO(tianhaoz95): some random todo");
+    });
 });
