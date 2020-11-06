@@ -1,8 +1,8 @@
 import { TodoContext } from "../types";
 
 export const readConfig = (context: TodoContext): void => {
-    context.config = {
-        patterns: [],
-        files: [],
-    };
-}
+  context.config = {
+    patterns: [],
+    files: [],
+  };
+};

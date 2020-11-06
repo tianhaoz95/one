@@ -2,4 +2,4 @@ import { Logger } from "tslog";
 
 const logger: Logger = new Logger();
 
-export {logger};
+export { logger };

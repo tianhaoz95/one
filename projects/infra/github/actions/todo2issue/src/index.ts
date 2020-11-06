@@ -1,7 +1,7 @@
-import * as core from '@actions/core';
+import * as core from "@actions/core";
 
 const main = async (): Promise<void> => {
-    core.info('hello world');
-}
+  core.info("hello world");
+};
 
-main()
+main();
