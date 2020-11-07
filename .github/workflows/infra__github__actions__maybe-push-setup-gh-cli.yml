@@ -1,5 +1,4 @@
 name: "Maybe push Setup GH CLI action"
-
 on:
   push:
     branches:
@@ -13,7 +12,6 @@ on:
     paths:
       - "projects/infra/github/actions/setup-gh-cli/**"
       - ".github/workflows/infra__github__actions__maybe-push-setup-gh-cli-action.yml"
-
 jobs:
   maybe-push-setup-gh-cli-action:
     runs-on: ubuntu-latest

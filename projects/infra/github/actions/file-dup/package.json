@@ -1,7 +1,7 @@
 {
-  "name": "setup-gh-cli",
+  "name": "file-dup",
   "version": "0.0.1",
-  "description": "A GitHub action to setup GitHub CLI.",
+  "description": "A GitHub action to automate file duplication.",
   "keywords": [
     "actions"
   ],

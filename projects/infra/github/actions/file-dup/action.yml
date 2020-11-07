@@ -1,0 +1,32 @@
+name: 'File Dup Action'
+description: 'GitHub action to duplicate files on purpose.'
+branding:
+  icon: check-square
+  color: green
+inputs:
+  config_files:
+    description: 'The configuration files.'
+    default: '.github/file-dup-action.yml'
+    required: true
+  email:
+    description: 'The email for commits.'
+    required: true
+  username:
+    description: 'The GitHub username.'
+    required: true
+  token:
+    description: 'The GitHub token.'
+    required: true
+  method:
+    description: 'The way to check in change [push|pull_request|dry_run].'
+    default: 'pull_request'
+    required: true
+  base:
+    description: 'The base branch to push the changes to [default=default branch].'
+    required: false
+  head:
+    description: 'The branch to push the changes from [default=current branch].'
+    required: false
+runs:
+  using: 'node12'
+  main: './lib/index.js'
