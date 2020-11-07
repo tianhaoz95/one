@@ -1,31 +1,33 @@
 name: "Maybe push Setup GH CLI action"
+
 on:
   push:
     branches:
-      - "master"
+      - "main"
     paths:
       - "projects/infra/github/actions/setup-gh-cli/**"
       - ".github/workflows/infra__github__actions__maybe-push-setup-gh-cli-action.yml"
   pull_request:
     branches:
-      - "master"
+      - "main"
     paths:
       - "projects/infra/github/actions/setup-gh-cli/**"
       - ".github/workflows/infra__github__actions__maybe-push-setup-gh-cli-action.yml"
+
 jobs:
   maybe-push-setup-gh-cli-action:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: projects/infra/github/actions/setup-gh-cli
+        working-directory: "projects/infra/github/actions/setup-gh-cli"
     steps:
       - uses: actions/checkout@v2
-      - name: install dependencies
+      - name: "install dependencies"
         run: npm install -g lerna && lerna bootstrap
-      - uses: ./projects/infra/github/actions/setup-gh-cli
+      - uses: "./projects/infra/github/actions/setup-gh-cli"
         with:
           token: ${{ secrets.TIANHAOZ_GITHUB_TOKEN }}
-      - name: try gh commands
+      - name: "try gh commands"
         run: gh issue list
       - uses: cpina/github-action-push-to-another-repository@master
         if: ${{ github.event_name == 'push' }}
