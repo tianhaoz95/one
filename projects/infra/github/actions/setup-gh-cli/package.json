@@ -1,0 +1,34 @@
+{
+  "name": "setup-gh-cli",
+  "version": "0.0.1",
+  "description": "A GitHub action to setup GitHub CLI.",
+  "keywords": [
+    "actions"
+  ],
+  "author": "Tianhao Zhou <tianhaoz@umich.edu>",
+  "homepage": "https://github.com/tianhaoz95/one",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tianhaoz95/one.git"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/tianhaoz95/one/issues"
+  },
+  "dependencies": {
+    "@actions/core": "^1.2.6",
+    "@actions/exec": "^1.0.4",
+    "@actions/github": "^4.0.0"
+  }
+}

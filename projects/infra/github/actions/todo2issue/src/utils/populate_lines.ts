@@ -65,7 +65,8 @@ export const populateLines = (context: TodoContext): void => {
   context.files.forEach((file: FileEntity) => {
     const lineContents = file.content.split("\n");
     lineContents.forEach((lineContent: string) => {
-      // populate file entities
+      const entity = lineToLineEntity(lineContent);
+      file.lines.push(entity);
     });
   });
 };
