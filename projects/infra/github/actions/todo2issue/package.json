@@ -41,6 +41,8 @@
     "@actions/core": "^1.2.6",
     "@actions/exec": "^1.0.4",
     "@actions/github": "^4.0.0",
+    "@actions/glob": "^0.1.0",
+    "@actions/io": "^1.0.2",
     "tslog": "^2.10.0",
     "yaml": "^1.10.0"
   }

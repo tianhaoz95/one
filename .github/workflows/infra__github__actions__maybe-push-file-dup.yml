@@ -1,0 +1,43 @@
+name: "Maybe push File Dup action"
+on:
+  push:
+    branches:
+      - "main"
+    paths:
+      - "projects/infra/github/actions/file-dup/**"
+      - ".github/workflows/infra__github__actions__maybe-push-file-dup.yml"
+  pull_request:
+    branches:
+      - "main"
+    paths:
+      - "projects/infra/github/actions/file-dup/**"
+      - ".github/workflows/infra__github__actions__maybe-push-file-dup.yml"
+jobs:
+  maybe-push-file-dup-action:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: projects/infra/github/actions/file-dup
+    steps:
+      - uses: actions/checkout@v2
+      - name: "install dependencies"
+        working-directory: projects/infra
+        run: npm install && npm run lerna:bootstrap && npm run lerna:build
+      - uses: ./projects/infra/github/actions/file-dup
+        with:
+          username: "tianhaoz95"
+          email: "tianhaoz@umich.edu"
+          token: ${{ secrets.TIANHAOZ_GITHUB_TOKEN }}
+          config_files: "actions/file-dup-action/example_config.json"
+          method: "dry_run"
+      - uses: cpina/github-action-push-to-another-repository@master
+        if: ${{ github.event_name == 'push' }}
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.TIANHAOZ_GITHUB_TOKEN }}
+        with:
+          source-directory: "projects/infra/github/actions/file-dup"
+          destination-repository-username: "Monorepo-Actions"
+          destination-github-username: "tianhaoz95"
+          destination-repository-name: "file-dup-action"
+          target-branch: "main"
+          user-email: "tianhaoz@umich.edu"
