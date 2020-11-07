@@ -27,3 +27,14 @@ jobs:
           token: ${{ secrets.TIANHAOZ_GITHUB_TOKEN }}
       - name: try gh commands
         run: gh issue list
+      - uses: cpina/github-action-push-to-another-repository@master
+        if: ${{ github.event_name == 'push' }}
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.TIANHAOZ_GITHUB_TOKEN }}
+        with:
+          source-directory: "actions/setup-gh-cli"
+          destination-repository-username: "Monorepo-Actions"
+          destination-github-username: "tianhaoz95"
+          destination-repository-name: "setup-gh-cli"
+          target-branch: "main"
+          user-email: "tianhaoz@umich.edu"
