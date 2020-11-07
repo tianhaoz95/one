@@ -23,7 +23,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: "install dependencies"
-        working-directory: projects/infra/github/actions/setup-gh-cli
+        working-directory: projects/infra
         run: npm install && npm run lerna:bootstrap
       - uses: ./projects/infra/github/actions/setup-gh-cli
         with:
