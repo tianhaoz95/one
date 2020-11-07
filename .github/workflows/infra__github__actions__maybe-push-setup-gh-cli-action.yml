@@ -19,12 +19,13 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: "projects/infra/github/actions/setup-gh-cli"
+        working-directory: projects/infra/github/actions/setup-gh-cli
     steps:
       - uses: actions/checkout@v2
       - name: "install dependencies"
-        run: npm install -g lerna && lerna bootstrap
-      - uses: "./projects/infra/github/actions/setup-gh-cli"
+        working-directory: projects/infra/github/actions/setup-gh-cli
+        run: npm install && npm run lerna:bootstrap
+      - uses: ./projects/infra/github/actions/setup-gh-cli
         with:
           token: ${{ secrets.TIANHAOZ_GITHUB_TOKEN }}
       - name: "try gh commands"
@@ -34,7 +35,7 @@ jobs:
         env:
           API_TOKEN_GITHUB: ${{ secrets.TIANHAOZ_GITHUB_TOKEN }}
         with:
-          source-directory: "actions/setup-gh-cli"
+          source-directory: "projects/infra/github/actions/setup-gh-cli"
           destination-repository-username: "Monorepo-Actions"
           destination-github-username: "tianhaoz95"
           destination-repository-name: "setup-gh-cli"
