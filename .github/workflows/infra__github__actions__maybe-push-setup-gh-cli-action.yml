@@ -5,13 +5,13 @@ on:
       - "master"
     paths:
       - "projects/infra/github/actions/setup-gh-cli/**"
-      - ".github/workflows/infra/actions/setup-gh-cli.yml"
+      - ".github/workflows/infra__github__actions__maybe-push-setup-gh-cli-action.yml"
   pull_request:
     branches:
       - "master"
     paths:
       - "projects/infra/github/actions/setup-gh-cli/**"
-      - ".github/workflows/infra/actions/setup-gh-cli.yml"
+      - ".github/workflows/infra__github__actions__maybe-push-setup-gh-cli-action.yml"
 jobs:
   maybe-push-setup-gh-cli-action:
     runs-on: ubuntu-latest
