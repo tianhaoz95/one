@@ -24,7 +24,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: "install dependencies"
         working-directory: projects/infra
-        run: npm install && npm run lerna:bootstrap
+        run: npm install && npm run lerna:bootstrap && npm run lerna:build
       - uses: ./projects/infra/github/actions/setup-gh-cli
         with:
           token: ${{ secrets.TIANHAOZ_GITHUB_TOKEN }}
