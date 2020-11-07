@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+message MonorepoTask {
+    string name = 1;
+}
+
+message MonorepoProject {
+    string name = 1;
+    repeated string paths = 2;
+    repeated MonorepoTask checks = 3;
+}
+
+message MonorepoConfig {
+    repeated MonorepoProject projects = 1;
+}
