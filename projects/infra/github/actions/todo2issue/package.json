@@ -39,6 +39,7 @@
   },
   "dependencies": {
     "@actions/core": "^1.2.6",
-    "tslog": "^2.10.0"
+    "tslog": "^2.10.0",
+    "yaml": "^1.10.0"
   }
 }

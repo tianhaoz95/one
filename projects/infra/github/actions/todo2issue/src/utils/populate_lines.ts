@@ -6,7 +6,7 @@ import {
 } from "../types";
 
 export const lineToLineEntity = (line: string): LineEntity => {
-  const todoMatcher = RegExp("TODO\\([@|#]\\w+\\):.*");
+  const todoMatcher = RegExp("TODO\\([@|#]?\\w+\\):.*");
   const entity: LineEntity = {
     containsTodo: false,
     content: line,

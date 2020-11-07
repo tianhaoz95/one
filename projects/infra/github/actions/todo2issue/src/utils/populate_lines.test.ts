@@ -31,7 +31,7 @@ describe("Line parser tests", () => {
     expect(entity.error).toEqual(TodoParsingErrorType.CONTAINS_DISALLOWED_CHAR);
   });
 
-  test("Should parse todo title correctly", () => {
+  test("Should parse todo assignee correctly", () => {
     const entity = lineToLineEntity("// TODO(@tianhaoz95): some random todo");
     expect(entity.githubUsername).toBeDefined();
     expect(entity.githubUsername).toMatch("tianhaoz95");
@@ -42,6 +42,12 @@ describe("Line parser tests", () => {
     console.log(JSON.stringify(entity));
     expect(entity.issueNumber).toBeDefined();
     expect(entity.issueNumber).toEqual(256);
+  });
+
+  test("Should parse todo titles correctly", () => {
+    const entity = lineToLineEntity("// TODO(#256): some random todo");
+    expect(entity.todoContent).toBeDefined();
+    expect(entity.todoContent).toMatch("some random todo");
   });
 
   test("Should error if assignee if malformed", () => {
