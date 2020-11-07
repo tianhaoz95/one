@@ -1,0 +1,37 @@
+{
+  "name": "json-yaml-converter",
+  "version": "0.0.1",
+  "description": "Converter for JSON and YAML data.",
+  "author": "Tianhao Zhou <tianhaoz@umich.edu>",
+  "homepage": "https://github.com/tianhaoz95/one",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "bin": {
+    "json-yaml-converter": "bin/json-yaml-converter"
+  },
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "bin",
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tianhaoz95/one.git"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "dependencies": {
+    "yargs": "^16.1.0"
+  },
+  "bugs": {
+    "url": "https://github.com/tianhaoz95/one/issues"
+  },
+  "devDependencies": {
+    "typescript": "^4.0.5"
+  }
+}
